@@ -14,28 +14,30 @@
 </header>
 
 <section class="hero">
-  <h2>Bookkeeping Made Simple.</h2>
-  <p>We handle your finances with clarity and efficiency—so you can focus on growing your business.</p>
+  <h2>Clean Books. Clear Decisions. Zero Stress.</h2>
+  <p>We automate and simplify your bookkeeping so you can focus on growing your business.</p>
   <a href="#services" class="btn-primary">Explore Services</a>
 </section>
 
+<!-- SERVICES -->
 <section id="services" class="section">
   <h2>Our Services</h2>
+
   <div class="grid">
 
     <div class="card">
       <h3>Monthly Bookkeeping</h3>
-      <p>Stay organized with accurate tracking of income and expenses.</p>
+      <p>Accurate tracking of income, expenses, and financial records.</p>
     </div>
 
     <div class="card">
       <h3>Financial Reporting</h3>
-      <p>Understand your numbers with clear, easy-to-read reports.</p>
+      <p>Clear monthly insights so you always know your numbers.</p>
     </div>
 
     <div class="card">
       <h3>Cleanup & Catch-Up</h3>
-      <p>Behind on your books? We’ll bring everything up to date.</p>
+      <p>We fix messy or overdue books and organize everything properly.</p>
     </div>
 
     <div class="card">
@@ -44,30 +46,22 @@
     </div>
 
     <div class="card">
-      <h3>Payroll Assistance</h3>
-      <p>Reliable support to keep your team paid correctly and on time.</p>
+      <h3>Payroll Support</h3>
+      <p>Ensure employees are paid correctly and on time.</p>
     </div>
 
     <div class="card">
       <h3>Consulting</h3>
-      <p>Expert advice to improve your financial processes.</p>
+      <p>Expert financial guidance to help your business scale.</p>
     </div>
 
   </div>
 </section>
 
-<section class="section alt">
-  <h2>Why AccountaMate?</h2>
-  <ul class="features">
-    <li>✔ Simple, efficient bookkeeping</li>
-    <li>✔ Clear financial insights</li>
-    <li>✔ Reliable and secure systems</li>
-    <li>✔ Personalized support</li>
-  </ul>
-</section>
+<!-- PRICING -->
 <section class="section pricing">
   <h2>Transparent Pricing</h2>
-  <p class="pricing-subtext">Simple, clear pricing. No hidden fees. Ever.</p>
+  <p class="pricing-subtext">Simple monthly plans. No hidden fees.</p>
 
   <div class="pricing-grid">
 
@@ -87,60 +81,51 @@
       <p class="price">$299 / month</p>
       <ul>
         <li>Full bookkeeping</li>
-        <li>Financial insights</li>
-        <li>Priority support</li>
         <li>Automation setup</li>
+        <li>Priority support</li>
       </ul>
       <a href="#contact" class="btn-primary">Most Popular</a>
     </div>
-
-    <div class="price-card">
-      <h3>Scale</h3>
-      <p class="price">Custom</p>
-      <ul>
-        <li>Advanced bookkeeping</li>
-        <li>Payroll support</li>
-        <li>Business consulting</li>
-      </ul>
-      <a href="#contact" class="btn-primary">Contact Us</a>
-    </div>
-
   </div>
 </section>
 
-<!-- CONTACT SECTION -->
+<!-- CONTACT -->
 <section id="contact" class="section contact-wrapper">
   <h2>Get in Touch</h2>
-  <p class="contact-subtext">Have a question or need help? Send a message or reach out directly.</p>
+  <p class="contact-subtext">Send a message or contact us directly.</p>
 
   <div class="contact-container">
 
-    <!-- Form -->
-    <form action="https://formspree.io/f/xzdoddqo" method="POST" class="contact-form">
+    <!-- FORM -->
+    <form id="contactForm" action="https://formspree.io/f/xzdoddqo" method="POST" class="contact-form">
 
       <div class="form-row">
         <input type="text" name="name" placeholder="Your Name" required>
         <input type="email" name="email" placeholder="Your Email" required>
       </div>
 
-      <textarea name="message" placeholder="How can we help you?" rows="6" required></textarea>
+      <textarea name="message" placeholder="Your Message" rows="6" required></textarea>
 
       <button type="submit" class="btn-primary">Send Message</button>
+
+      <p id="successMessage" class="success-message"></p>
     </form>
 
-    <!-- Contact Info -->
+    <!-- CONTACT INFO -->
     <div class="contact-info">
       <h3>Contact Details</h3>
 
       <p><strong>Email:</strong><br>
-      <a href="mailto:meryemyuksel@live.com">meryemyuksel@live.com</a></p>
+        <a href="mailto:meryemyuksel@live.com">meryemyuksel@live.com</a>
+      </p>
 
       <p><strong>Phone:</strong><br>
-      <a href="tel:13219468885">(321) 946-8885</a></p>
+        <a href="tel:13219468885">(321) 946-8885</a>
+      </p>
 
-      <div class="contact-note">
-        <p>We typically respond within 24 hours.</p>
-      </div>
+      <p class="contact-note">
+        We usually respond within 24 hours.
+      </p>
     </div>
 
   </div>
@@ -149,6 +134,33 @@
 <footer>
   <p>© 2026 AccountaMate. All rights reserved.</p>
 </footer>
+
+<!-- FORM CLEAR + SUCCESS SCRIPT -->
+<script>
+  const form = document.getElementById("contactForm");
+  const message = document.getElementById("successMessage");
+
+  form.addEventListener("submit", async function(e) {
+    e.preventDefault();
+
+    const data = new FormData(form);
+
+    const response = await fetch(form.action, {
+      method: "POST",
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (response.ok) {
+      form.reset();
+      message.textContent = "Thank you! Your message has been sent.";
+      message.style.color = "green";
+    } else {
+      message.textContent = "Something went wrong. Please try again.";
+      message.style.color = "red";
+    }
+  });
+</script>
 
 </body>
 </html>
