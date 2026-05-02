@@ -1,8 +1,8 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: #0f172a;
-  color: #e2e8f0;
+  background: #f8fafc;
+  color: #1e293b;
 }
 
 /* Navbar */
@@ -11,16 +11,17 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 20px 40px;
-  background: #020617;
+  background: white;
+  border-bottom: 1px solid #e2e8f0;
 }
 
 .logo {
-  color: #22c55e;
+  color: #2563eb;
 }
 
 .nav-btn {
-  background: #22c55e;
-  color: black;
+  background: #2563eb;
+  color: white;
   padding: 10px 16px;
   border-radius: 6px;
   text-decoration: none;
@@ -30,17 +31,18 @@ body {
 .hero {
   text-align: center;
   padding: 100px 20px;
+  background: white;
 }
 
 .hero h2 {
-  font-size: 3em;
+  font-size: 2.8em;
 }
 
 .btn-primary {
   display: inline-block;
   margin-top: 20px;
-  background: #22c55e;
-  color: black;
+  background: #2563eb;
+  color: white;
   padding: 12px 20px;
   border-radius: 6px;
   text-decoration: none;
@@ -54,7 +56,7 @@ body {
 }
 
 .alt {
-  background: #020617;
+  background: #eef2ff;
 }
 
 /* Grid */
@@ -65,14 +67,16 @@ body {
 }
 
 .card {
-  background: #020617;
+  background: white;
   padding: 20px;
   border-radius: 10px;
-  transition: transform 0.2s;
+  border: 1px solid #e2e8f0;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .card:hover {
   transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
 }
 
 /* Features */
@@ -85,16 +89,38 @@ body {
   margin: 10px 0;
 }
 
-/* Contact */
+/* Contact Form */
 .contact {
   text-align: center;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+  margin: 20px auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #cbd5f5;
+  font-size: 1em;
+}
+
+.contact-form button {
+  cursor: pointer;
+  border: none;
 }
 
 /* Footer */
 footer {
   text-align: center;
   padding: 20px;
-  background: #020617;
+  background: white;
+  border-top: 1px solid #e2e8f0;
 }
 
 /* Responsive */
