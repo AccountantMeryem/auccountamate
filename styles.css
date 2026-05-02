@@ -46,6 +46,7 @@ body {
   padding: 12px 20px;
   border-radius: 6px;
   text-decoration: none;
+  border: none;
 }
 
 /* Sections */
@@ -89,30 +90,68 @@ body {
   margin: 10px 0;
 }
 
-/* Contact Form */
-.contact {
+/* CONTACT SECTION */
+.contact-wrapper {
   text-align: center;
 }
 
-.contact-form {
+.contact-subtext {
+  margin-bottom: 40px;
+  color: #64748b;
+}
+
+.contact-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+/* Form */
+.form-row {
   display: flex;
-  flex-direction: column;
-  gap: 15px;
-  max-width: 500px;
-  margin: 20px auto;
+  gap: 10px;
 }
 
 .contact-form input,
 .contact-form textarea {
-  padding: 12px;
-  border-radius: 6px;
+  width: 100%;
+  padding: 14px;
+  border-radius: 8px;
   border: 1px solid #cbd5f5;
   font-size: 1em;
 }
 
+.contact-form textarea {
+  resize: vertical;
+}
+
 .contact-form button {
   cursor: pointer;
-  border: none;
+}
+
+/* Contact Info */
+.contact-info {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  text-align: left;
+}
+
+.contact-info h3 {
+  margin-top: 0;
+}
+
+.contact-info a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.contact-note {
+  margin-top: 20px;
+  font-size: 0.9em;
+  color: #64748b;
 }
 
 /* Footer */
@@ -131,5 +170,13 @@ footer {
 
   .hero h2 {
     font-size: 2em;
+  }
+
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
+
+  .form-row {
+    flex-direction: column;
   }
 }
